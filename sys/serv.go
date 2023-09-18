@@ -1,8 +1,8 @@
 package sys
 
 import (
+	"github.com/hootuu/utils/configure"
 	"github.com/rs/xid"
-	"github/hootuu/utils/configure"
 	"os"
 	"strings"
 )

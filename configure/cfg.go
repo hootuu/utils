@@ -1,9 +1,9 @@
 package configure
 
 import (
+	"github.com/hootuu/utils/errors"
+	"github.com/hootuu/utils/strs"
 	"github.com/spf13/viper"
-	"github/hootuu/utils/errors"
-	"github/hootuu/utils/strs"
 	"strings"
 	"time"
 )

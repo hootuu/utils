@@ -1,8 +1,8 @@
 package logger
 
 import (
-	"github/hootuu/utils/configure"
-	"github/hootuu/utils/sys"
+	"github.com/hootuu/utils/configure"
+	"github.com/hootuu/utils/sys"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"gopkg.in/natefinch/lumberjack.v2"

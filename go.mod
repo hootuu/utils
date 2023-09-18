@@ -1,4 +1,4 @@
-module github/hootuu/utils
+module github.com/hootuu/utils
 
 go 1.20
 
