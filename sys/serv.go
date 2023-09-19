@@ -2,6 +2,7 @@ package sys
 
 import (
 	"github.com/hootuu/utils/configure"
+	"github.com/hootuu/utils/errors"
 	"github.com/rs/xid"
 	"os"
 	"strings"
@@ -10,7 +11,7 @@ import (
 var ServerID string
 var RunMode Mode
 
-func Exit(err error) {
+func Exit(err *errors.Error) {
 	if err != nil {
 		Error("Crash error: ", err.Error())
 	}
