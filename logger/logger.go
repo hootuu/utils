@@ -37,7 +37,7 @@ func LevelOf(level Level) zapcore.Level {
 }
 
 func GetLogger(key string) *zap.Logger {
-	rootPath := configure.GetString("logger."+key+".root", "./logs/"+key+"/")
+	rootPath := configure.GetString("logger."+key+".root", "./.logs/"+key+"/")
 	logLevel := configure.GetString("logger."+key+".level", "debug")
 	fileName := rootPath + configure.GetString("logger."+key+".file", key+".jsonl")
 	maxSize := configure.GetInt("logger."+key+".size.max", 128)

@@ -6,6 +6,24 @@ import (
 	"strings"
 )
 
+type colorWriter struct {
+}
+
+func (c *colorWriter) Write(p []byte) (n int, err error) {
+	Info(string(p))
+	return len(p), nil
+}
+
+type noneWriter struct {
+}
+
+func (c *noneWriter) Write(p []byte) (n int, err error) {
+	return len(p), nil
+}
+
+var ColorWriter = &colorWriter{}
+var NoneWriter = &noneWriter{}
+
 func Info(arg ...any) {
 	color.Style{color.FgBlue}.Println(doFormat(arg...))
 }
