@@ -20,7 +20,7 @@ func Exit(err *errors.Error) {
 
 func init() {
 	ServerID = strings.ToUpper(xid.New().String())
-	RunMode = ModeValueOf(configure.GetString("sys.mode", string(LOCAL)))
+	RunMode = ModeValueOf(configure.GetString("sys.mode"))
 	Warn("# Server ID: ", ServerID)
 	Warn("# Run Mode: ", strings.ToUpper(string(RunMode)))
 }

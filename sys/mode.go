@@ -1,5 +1,7 @@
 package sys
 
+import "strings"
+
 // Mode Run Mode Defined
 type Mode string
 
@@ -13,7 +15,8 @@ const (
 )
 
 func ModeValueOf(mode string) Mode {
-	switch mode {
+	lowerMode := strings.ToLower(mode)
+	switch lowerMode {
 	case string(LOCAL):
 		return LOCAL
 	case string(DEV):

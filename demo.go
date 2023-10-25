@@ -1,10 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"github.com/hootuu/utils/configure"
+	"github.com/hootuu/utils/sys"
 )
 
 func main() {
-	fmt.Println(configure.GetString("sys.mode", "LOCAL01"))
+	mode := configure.GetString("sys.mode", "LOCAL01")
+	sys.Info(sys.RunMode, " vs ", mode)
 }
