@@ -10,6 +10,7 @@ import (
 
 var ServerID string
 var RunMode Mode
+var WorkingDirectory string
 
 func Exit(err *errors.Error) {
 	if err != nil {
@@ -21,6 +22,13 @@ func Exit(err *errors.Error) {
 func init() {
 	ServerID = strings.ToUpper(xid.New().String())
 	RunMode = ModeValueOf(configure.GetString("sys.mode"))
+	wd, nErr := os.Getwd()
+	if nErr != nil {
+		Error("Get Current Working Directory Failed: ", nErr.Error())
+		Exit(errors.Sys("Get Current Working Directory Failed!"))
+		return
+	}
+	WorkingDirectory = wd
 	Warn("# Server ID: ", ServerID)
 	Warn("# Run Mode: ", strings.ToUpper(string(RunMode)))
 }
