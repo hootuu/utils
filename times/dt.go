@@ -2,12 +2,20 @@ package times
 
 import "time"
 
+func GetToday(t time.Time) time.Time {
+	now := time.Now()
+	yesterday := time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location())
+	return yesterday
+}
+
 func GetTomorrow(t time.Time) time.Time {
 	return t.AddDate(0, 0, 1)
 }
 
 func GetYesterday(t time.Time) time.Time {
-	return t.AddDate(0, 0, -1)
+	now := time.Now()
+	yesterday := time.Date(now.Year(), now.Month(), now.Day()-1, 0, 0, 0, 0, now.Location())
+	return yesterday
 }
 
 func GetDtRange(t time.Time) (time.Time, time.Time) {
